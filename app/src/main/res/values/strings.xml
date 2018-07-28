@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TalViewDemoProject</string>
+    <string name="title_activity_toolbar">ToolbarActivity</string>
+</resources>
