@@ -4,30 +4,18 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.vinayjohn.talviewdemoproject.R;
 import com.example.vinayjohn.talviewdemoproject.adapter.CommentsListCustomAdapter;
-import com.example.vinayjohn.talviewdemoproject.adapter.PhotoListCustomAdapter;
-import com.example.vinayjohn.talviewdemoproject.api.ApiClient;
-import com.example.vinayjohn.talviewdemoproject.api.ApiInterface;
 import com.example.vinayjohn.talviewdemoproject.livedata.ExpandedPostObservableData;
-import com.example.vinayjohn.talviewdemoproject.livedata.PhotosObservableData;
 import com.example.vinayjohn.talviewdemoproject.response.CommentsModel;
-import com.example.vinayjohn.talviewdemoproject.response.PhotosModel;
-import com.example.vinayjohn.talviewdemoproject.viewmodel.ExpandedAlbumViewModel;
 import com.example.vinayjohn.talviewdemoproject.viewmodel.ExpandedPostsViewModel;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by vinayjohn on 25/07/18.

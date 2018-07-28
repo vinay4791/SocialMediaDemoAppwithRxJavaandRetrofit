@@ -8,24 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.vinayjohn.talviewdemoproject.R;
 import com.example.vinayjohn.talviewdemoproject.adapter.PhotoListCustomAdapter;
-import com.example.vinayjohn.talviewdemoproject.api.ApiClient;
-import com.example.vinayjohn.talviewdemoproject.api.ApiInterface;
-import com.example.vinayjohn.talviewdemoproject.livedata.AlbumsObservableData;
-import com.example.vinayjohn.talviewdemoproject.livedata.ExpandedPostObservableData;
 import com.example.vinayjohn.talviewdemoproject.livedata.PhotosObservableData;
 import com.example.vinayjohn.talviewdemoproject.response.PhotosModel;
-import com.example.vinayjohn.talviewdemoproject.viewmodel.AlbumsViewModel;
 import com.example.vinayjohn.talviewdemoproject.viewmodel.ExpandedAlbumViewModel;
 
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by vinayjohn on 25/07/18.
