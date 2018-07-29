@@ -6,11 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.vinayjohn.talviewdemoproject.R;
-import com.example.vinayjohn.talviewdemoproject.activities.PostsActivity;
 import com.example.vinayjohn.talviewdemoproject.response.PostsModel;
 
 import java.util.List;
