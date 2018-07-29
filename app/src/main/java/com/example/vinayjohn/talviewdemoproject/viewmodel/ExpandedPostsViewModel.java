@@ -6,7 +6,10 @@ import android.support.annotation.NonNull;
 
 import com.example.vinayjohn.talviewdemoproject.api.ServiceManager;
 import com.example.vinayjohn.talviewdemoproject.livedata.ExpandedPostObservableData;
+import com.example.vinayjohn.talviewdemoproject.response.CommentsModel;
 import com.example.vinayjohn.talviewdemoproject.response.PostsModel;
+
+import java.util.List;
 
 import rx.Observer;
 import rx.Subscription;
@@ -42,6 +45,28 @@ public class ExpandedPostsViewModel extends AndroidViewModel {
             @Override
             public void onNext(PostsModel post) {
                 observableData.publishPostsDataObservable(post);
+            }
+        }));
+
+    }
+
+    public void doGetComments(ExpandedPostObservableData observableData, String postsId) {
+        expandedPostsSubsription = serviceManager.getComments(postsId).subscribe((new Observer<List<CommentsModel>>() {
+
+
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(List<CommentsModel> commentsModelList) {
+                observableData.publishPostsDataObservable(commentsModelList);
             }
         }));
 

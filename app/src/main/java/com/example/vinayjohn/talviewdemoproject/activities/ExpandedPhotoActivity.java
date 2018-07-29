@@ -15,10 +15,10 @@ import com.example.vinayjohn.talviewdemoproject.R;
  * Created by vinayjohn on 25/07/18.
  */
 
-public class ExpandedPhotoActivity extends AppCompatActivity {
-    public static void start(Context context,String imageUrl) {
+public class ExpandedPhotoActivity extends ToolbarActivity {
+    public static void start(Context context, String imageUrl) {
         Intent intent = new Intent(context, ExpandedPhotoActivity.class);
-        intent.putExtra("photoUrl",imageUrl);
+        intent.putExtra("photoUrl", imageUrl);
         context.startActivity(intent);
     }
 
@@ -28,6 +28,7 @@ public class ExpandedPhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_expanded_photo);
         Bundle bundle = getIntent().getExtras();
 
+        initToolBar("Photo", null);
         initializePhoto(bundle.getString("photoUrl"));
     }
 

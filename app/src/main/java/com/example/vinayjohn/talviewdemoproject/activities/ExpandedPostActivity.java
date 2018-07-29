@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.vinayjohn.talviewdemoproject.R;
 import com.example.vinayjohn.talviewdemoproject.adapter.CommentsListCustomAdapter;
@@ -29,6 +30,7 @@ public class ExpandedPostActivity extends ToolbarActivity {
     private RelativeLayout progressBar;
     private ExpandedPostsViewModel expandedPostsViewModel;
     private ExpandedPostObservableData expandedPostObservableData;
+    private TextView postsTitle, postsBody;
 
     public static void start(Context context, String postsId) {
         Intent intent = new Intent(context, ExpandedPostActivity.class);
@@ -53,19 +55,25 @@ public class ExpandedPostActivity extends ToolbarActivity {
         initToolBar("Post", null);
         expandedPostsViewModel = ViewModelProviders.of(this).get(ExpandedPostsViewModel.class);
         progressBar = findViewById(R.id.progress_bar);
+        postsTitle = findViewById(R.id.posts_title);
+        postsBody = findViewById(R.id.posts_body);
     }
 
 
     protected void initializeLiveDataObservables() {
         expandedPostObservableData = new ExpandedPostObservableData();
         expandedPostObservableData.getPostsObservable().observe(this, post -> {
-            //   generateDataList(post);
+            setPostDetails(post.getTitle(), post.getBody());
+        });
+        expandedPostObservableData.getCommentsMutableLiveData().observe(this, commentsModelList -> {
+            generateDataList(commentsModelList);
         });
     }
 
     protected void fetchData() {
         progressBar.setVisibility(View.VISIBLE);
         expandedPostsViewModel.doGetPosts(expandedPostObservableData, postsId);
+        expandedPostsViewModel.doGetComments(expandedPostObservableData,postsId);
     }
 
     private void generateDataList(List<CommentsModel> commentsModel) {
@@ -77,8 +85,9 @@ public class ExpandedPostActivity extends ToolbarActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    private void setPostDetails(String title,String body){
-
+    private void setPostDetails(String title, String body) {
+        postsTitle.setText(title);
+        postsBody.setText(body);
     }
 
     @Override

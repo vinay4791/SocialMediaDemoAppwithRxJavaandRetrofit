@@ -7,6 +7,8 @@
 
     <include layout="@layout/activity_toolbar" />
 
+    <include layout="@layout/progress_bar_layout" />
+
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
@@ -30,25 +32,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="4dp"
-                android:text="sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/posts_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="4dp"
-                android:text="quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto" />
+                android:padding="4dp" />
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/comments_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Comments"
+        android:textStyle="bold"
+        android:layout_below="@id/cardView"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/comments_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/cardView"
+        android:layout_below="@id/comments_tv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
